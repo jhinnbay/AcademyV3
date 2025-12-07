@@ -4,7 +4,7 @@ import styles from './PromptLibraryCard.module.css';
 
 const PromptLibraryCard: React.FC = () => {
   return (
-    <div className={styles.promptLibraryCard}>
+    <div className={styles.promptLibraryCard} data-intro="prompt-library">
       <div className={styles.wrapper}>
         <div className={styles.transmissionCard}>
           <div className={styles.transmissionHeader}>

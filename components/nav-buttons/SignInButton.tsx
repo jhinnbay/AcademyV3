@@ -4,7 +4,7 @@ import styles from './SignInButton.module.css';
 
 const SignInButton: React.FC = () => {
   return (
-    <button className={styles.signInButton}>
+    <button className={styles.signInButton} data-intro="sign-in">
       <Image 
         src="/icons/ethlogo.svg" 
         alt="Ethereum logo" 

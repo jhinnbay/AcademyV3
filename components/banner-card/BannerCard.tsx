@@ -4,7 +4,7 @@ import styles from './BannerCard.module.css';
 
 const BannerCard: React.FC = () => {
   return (
-    <div className={styles.bannerCard}>
+    <div className={styles.bannerCard} data-intro="banner-card">
       <div className={styles.content}>
         <div className={styles.textSection}>
           <h2 className={styles.title}>DAEMON:// Recommend Me Learning Paths!</h2>

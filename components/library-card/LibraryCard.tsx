@@ -4,7 +4,7 @@ import styles from './LibraryCard.module.css';
 
 const LibraryCard: React.FC = () => {
   return (
-    <div className={styles.libraryCard}>
+    <div className={styles.libraryCard} data-intro="library-card">
       <div className={styles.header}>
         <span className={styles.title}>IPFS://Library</span>
         <div className={styles.icons}>

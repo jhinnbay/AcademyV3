@@ -110,7 +110,7 @@ const Quests: React.FC = () => {
   ];
 
   return (
-    <div className={styles.questsContainer}>
+    <div className={styles.questsContainer} data-intro="quests">
       <div className={styles.questsWrapper}>
         <div className={styles.header}>
           <h1 className={styles.title}>Active Quests</h1>
