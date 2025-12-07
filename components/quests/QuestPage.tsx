@@ -121,125 +121,125 @@ const QuestPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('active');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Mock quest data
-  const allQuests: QuestData[] = [
-    // Active Quests
-    {
-      id: '1',
-      title: 'Your First Quest',
-      academy: 'Mental Wealth Academy',
-      date: '03/16/2025',
-      time: '12:33 PM',
-      questName: 'Academy V3 Oracle',
-      usdcBonded: '700',
-      usdcReward: '5',
-      status: 'active',
-    },
-    {
-      id: '2',
-      title: 'Community Builder',
-      academy: 'Digital Skills Academy',
-      date: '03/17/2025',
-      time: '10:15 AM',
-      questName: 'Build Community Hub',
-      usdcBonded: '1,200',
-      usdcReward: '15',
-      status: 'active',
-    },
-    {
-      id: '3',
-      title: 'Content Creator',
-      academy: 'Creative Arts Academy',
-      date: '03/18/2025',
-      time: '2:45 PM',
-      questName: 'Create Tutorial Series',
-      usdcBonded: '850',
-      usdcReward: '8',
-      status: 'active',
-    },
-    // Available Quests
-    {
-      id: '4',
-      title: 'Blockchain Explorer',
-      academy: 'Tech Innovation Academy',
-      date: '03/20/2025',
-      time: '9:00 AM',
-      questName: 'Learn Blockchain Basics',
-      usdcBonded: '500',
-      usdcReward: '10',
-      status: 'available',
-    },
-    {
-      id: '5',
-      title: 'Design Master',
-      academy: 'Visual Design Academy',
-      date: '03/21/2025',
-      time: '11:30 AM',
-      questName: 'UI/UX Design Challenge',
-      usdcBonded: '600',
-      usdcReward: '12',
-      status: 'available',
-    },
-    {
-      id: '6',
-      title: 'Code Warrior',
-      academy: 'Programming Academy',
-      date: '03/22/2025',
-      time: '1:00 PM',
-      questName: 'Build Full Stack App',
-      usdcBonded: '1,500',
-      usdcReward: '20',
-      status: 'available',
-    },
-    {
-      id: '7',
-      title: 'Marketing Guru',
-      academy: 'Business Academy',
-      date: '03/23/2025',
-      time: '3:15 PM',
-      questName: 'Social Media Campaign',
-      usdcBonded: '900',
-      usdcReward: '18',
-      status: 'available',
-    },
-    // Ending Quests
-    {
-      id: '8',
-      title: 'Early Adopter',
-      academy: 'Innovation Academy',
-      date: '03/19/2025',
-      time: '4:00 PM',
-      questName: 'Beta Testing Program',
-      usdcBonded: '400',
-      usdcReward: '6',
-      status: 'ending',
-    },
-    {
-      id: '9',
-      title: 'Research Pioneer',
-      academy: 'Science Academy',
-      date: '03/19/2025',
-      time: '5:30 PM',
-      questName: 'Research Paper Review',
-      usdcBonded: '750',
-      usdcReward: '9',
-      status: 'ending',
-    },
-    {
-      id: '10',
-      title: 'Mentor Program',
-      academy: 'Leadership Academy',
-      date: '03/19/2025',
-      time: '6:00 PM',
-      questName: 'Mentor New Students',
-      usdcBonded: '1,000',
-      usdcReward: '25',
-      status: 'ending',
-    },
-  ];
-
   // Filter quests based on active tab and search query
   const filteredQuests = useMemo(() => {
+    // Mock quest data - moved inside useMemo to prevent dependency issues
+    const allQuests: QuestData[] = [
+      // Active Quests
+      {
+        id: '1',
+        title: 'Your First Quest',
+        academy: 'Mental Wealth Academy',
+        date: '03/16/2025',
+        time: '12:33 PM',
+        questName: 'Academy V3 Oracle',
+        usdcBonded: '700',
+        usdcReward: '5',
+        status: 'active',
+      },
+      {
+        id: '2',
+        title: 'Community Builder',
+        academy: 'Digital Skills Academy',
+        date: '03/17/2025',
+        time: '10:15 AM',
+        questName: 'Build Community Hub',
+        usdcBonded: '1,200',
+        usdcReward: '15',
+        status: 'active',
+      },
+      {
+        id: '3',
+        title: 'Content Creator',
+        academy: 'Creative Arts Academy',
+        date: '03/18/2025',
+        time: '2:45 PM',
+        questName: 'Create Tutorial Series',
+        usdcBonded: '850',
+        usdcReward: '8',
+        status: 'active',
+      },
+      // Available Quests
+      {
+        id: '4',
+        title: 'Blockchain Explorer',
+        academy: 'Tech Innovation Academy',
+        date: '03/20/2025',
+        time: '9:00 AM',
+        questName: 'Learn Blockchain Basics',
+        usdcBonded: '500',
+        usdcReward: '10',
+        status: 'available',
+      },
+      {
+        id: '5',
+        title: 'Design Master',
+        academy: 'Visual Design Academy',
+        date: '03/21/2025',
+        time: '11:30 AM',
+        questName: 'UI/UX Design Challenge',
+        usdcBonded: '600',
+        usdcReward: '12',
+        status: 'available',
+      },
+      {
+        id: '6',
+        title: 'Code Warrior',
+        academy: 'Programming Academy',
+        date: '03/22/2025',
+        time: '1:00 PM',
+        questName: 'Build Full Stack App',
+        usdcBonded: '1,500',
+        usdcReward: '20',
+        status: 'available',
+      },
+      {
+        id: '7',
+        title: 'Marketing Guru',
+        academy: 'Business Academy',
+        date: '03/23/2025',
+        time: '3:15 PM',
+        questName: 'Social Media Campaign',
+        usdcBonded: '900',
+        usdcReward: '18',
+        status: 'available',
+      },
+      // Ending Quests
+      {
+        id: '8',
+        title: 'Early Adopter',
+        academy: 'Innovation Academy',
+        date: '03/19/2025',
+        time: '4:00 PM',
+        questName: 'Beta Testing Program',
+        usdcBonded: '400',
+        usdcReward: '6',
+        status: 'ending',
+      },
+      {
+        id: '9',
+        title: 'Research Pioneer',
+        academy: 'Science Academy',
+        date: '03/19/2025',
+        time: '5:30 PM',
+        questName: 'Research Paper Review',
+        usdcBonded: '750',
+        usdcReward: '9',
+        status: 'ending',
+      },
+      {
+        id: '10',
+        title: 'Mentor Program',
+        academy: 'Leadership Academy',
+        date: '03/19/2025',
+        time: '6:00 PM',
+        questName: 'Mentor New Students',
+        usdcBonded: '1,000',
+        usdcReward: '25',
+        status: 'ending',
+      },
+    ];
+
     let filtered = allQuests.filter(quest => quest.status === activeTab);
 
     if (searchQuery.trim()) {
@@ -252,7 +252,7 @@ const QuestPage: React.FC = () => {
     }
 
     return filtered;
-  }, [activeTab, searchQuery, allQuests]);
+  }, [activeTab, searchQuery]);
 
   return (
     <div className={styles.questPageContainer}>

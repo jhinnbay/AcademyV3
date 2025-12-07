@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './LibraryCard.module.css';
 
 const LibraryCard: React.FC = () => {
@@ -7,19 +8,25 @@ const LibraryCard: React.FC = () => {
       <div className={styles.header}>
         <span className={styles.title}>IPFS://Library</span>
         <div className={styles.icons}>
-          <img 
+          <Image 
             src="/icons/lovebadge.svg" 
             alt="Love badge" 
+            width={24}
+            height={24}
             className={styles.iconFrame}
           />
-          <img 
+          <Image 
             src="/icons/badge2.svg" 
             alt="Badge 2" 
+            width={24}
+            height={24}
             className={styles.iconFrame}
           />
-          <img 
+          <Image 
             src="/icons/badge3.svg" 
             alt="Badge 3" 
+            width={24}
+            height={24}
             className={styles.iconFrame}
           />
         </div>

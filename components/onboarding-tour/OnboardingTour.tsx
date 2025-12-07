@@ -77,6 +77,7 @@ export const startOnboardingTour = async () => {
       tooltip.style.width = 'auto';
       tooltip.style.boxSizing = 'border-box';
     }
+    return true;
   });
 
   // Set consistent tooltip width and ensure it stays within viewport
