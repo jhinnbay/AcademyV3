@@ -4,7 +4,7 @@ import CreateAccountButton from '@/components/nav-buttons/CreateAccountButton';
 import SignInButton from '@/components/nav-buttons/SignInButton';
 import ExploreQuestsButton from '@/components/nav-buttons/ExploreQuestsButton';
 import NewsletterCard from '@/components/newsletter-card/NewsletterCard';
-import BookCard from '@/components/book-card/BookCard';
+import FarcasterFriends from '@/components/farcaster-friends/FarcasterFriends';
 import LibraryCard from '@/components/library-card/LibraryCard';
 import styles from './SideNavigation.module.css';
 
@@ -23,8 +23,8 @@ const SideNavigation: React.FC = () => {
       <CreateAccountButton />
       <SignInButton />
       <ExploreQuestsButton />
+      <FarcasterFriends />
       <LibraryCard />
-      <BookCard />
       <NewsletterCard />
     </div>
   );

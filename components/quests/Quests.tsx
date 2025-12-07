@@ -111,20 +111,22 @@ const Quests: React.FC = () => {
 
   return (
     <div className={styles.questsContainer}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>Active Quests</h1>
-        <button 
-          className={styles.viewAllButton}
-          onClick={() => router.push('/quests')}
-        >
-          View All Quests
-        </button>
-      </div>
+      <div className={styles.questsWrapper}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Active Quests</h1>
+          <button 
+            className={styles.viewAllButton}
+            onClick={() => router.push('/quests')}
+          >
+            View All Quests
+          </button>
+        </div>
 
-      <div className={styles.questsList}>
-        {quests.map((quest, index) => (
-          <QuestCard key={index} {...quest} />
-        ))}
+        <div className={styles.questsList}>
+          {quests.map((quest, index) => (
+            <QuestCard key={index} {...quest} />
+          ))}
+        </div>
       </div>
     </div>
   );

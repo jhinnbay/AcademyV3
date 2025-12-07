@@ -17,17 +17,46 @@
   gap: 20px;
 }
 
+.eventsAndPromptRow {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 .promptSection {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1.5;
+  min-width: 0;
 }
 
 .sectionTitle {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 32px;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   color: #000000;
   margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.eventsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .eventsAndPromptRow {
+    flex-direction: column;
+  }
+  
+  .eventsSection {
+    width: 100%;
+  }
 }
 

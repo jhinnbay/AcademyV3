@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.imgur.com', 'cdn.builder.io', 'via.placeholder.com'],
+    domains: ['i.imgur.com', 'cdn.builder.io', 'via.placeholder.com', 'images.unsplash.com', 'www.larvalabs.com'],
     unoptimized: false,
   },
   webpack: (config, { isServer }) => {

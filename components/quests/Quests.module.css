@@ -3,7 +3,18 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-top: 48px;
+  margin-top: 0;
+}
+
+.questsWrapper {
+  background-color: rgb(244, 245, 254); /* #F4F5FE */
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .header {
@@ -17,7 +28,7 @@
   font-family: var(--font-primary);
   font-size: 32px;
   font-weight: var(--font-weight-bold);
-  color: rgb(39, 23, 49); /* #271830 - from Figma */
+  color: var(--color-text-dark);
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
@@ -29,7 +40,7 @@
   font-weight: var(--font-weight-medium);
   font-size: 14px;
   color: var(--color-primary);
-  background: transparent;
+  background: rgba(81, 104, 255, 0.1);
   border: 1.09px solid var(--color-primary);
   border-radius: 8.74px;
   padding: 10.93px 12px;
@@ -46,8 +57,8 @@
 }
 
 .questBadge {
-  background: linear-gradient(to bottom, rgba(236, 236, 255, 1), rgba(225, 225, 254, 1));
-  border: 1.34px solid rgb(31, 41, 55);
+  background: var(--color-text-light);
+  border: 1.34px solid rgba(0, 0, 0, 0.5);
   border-radius: 5.35px;
   padding: 13.39px;
   display: flex;
@@ -97,6 +108,14 @@
   min-height: 120px;
   padding: 36.17px 33px;
   margin-bottom: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.questCard:hover {
+  background: rgb(230, 230, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(81, 104, 255, 0.2);
 }
 
 .questCardContent {
