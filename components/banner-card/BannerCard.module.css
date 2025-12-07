@@ -53,12 +53,7 @@
 .actionButton {
   width: 250.48px;
   height: 42.94px;
-  background: linear-gradient(
-    135deg,
-    #E0115F 0%,
-    #C2185B 50%,
-    #9B0E3D 100%
-  );
+  background: var(--color-primary);
   border: 0.72px solid #000000;
   border-radius: 4.29px;
   display: flex;
@@ -70,7 +65,7 @@
   box-shadow: 
     0 1.43px 0 rgba(172, 172, 172, 0.5) inset,
     0 -2.86px 0 rgba(21, 21, 21, 0.25) inset,
-    0 5.73px 11.45px rgba(224, 17, 95, 0.3);
+    0 5.73px 11.45px rgba(81, 104, 255, 0.3);
   transition: all 0.3s ease;
   position: relative;
 }
@@ -80,7 +75,7 @@
   box-shadow: 
     0 1.43px 0 rgba(172, 172, 172, 0.5) inset,
     0 -2.86px 0 rgba(21, 21, 21, 0.25) inset,
-    0 8px 16px rgba(224, 17, 95, 0.4);
+    0 8px 16px rgba(81, 104, 255, 0.4);
 }
 
 .buttonText {

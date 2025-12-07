@@ -1,0 +1,1196 @@
+.questPageContainer {
+  width: 100%;
+  min-height: 100vh;
+  padding: 8px 20px 40px 20px;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Outermost wrapper with F4F5FE background and 40px padding */
+.blackWrapper {
+  background: #F4F5FE;
+  border: 2px solid #000000;
+  padding: 24px;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Outer wrapper matching hero banner inner width */
+.outerWrapper {
+  width: 100%;
+  max-width: 100%;
+  /* Matches heroContainer width constraints */
+}
+
+/* Innermost wrapper with black background and black border */
+.additionalWrapper {
+  width: 100%;
+  border: 2px solid #000000;
+  border-radius: 24px;
+  padding: 24px;
+  background: #000000;
+}
+
+/* Bento Grid Layout */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Left/Middle Section */
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Main Large Card - Crypto Reserve Card */
+.mainCard {
+  background: rgb(244, 245, 254);
+  border-radius: 24.69px;
+  padding: 0;
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.mainCardContent {
+  width: 100%;
+  display: flex;
+  position: relative;
+  min-height: 340px;
+}
+
+.mainCardLeft {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  z-index: 1;
+}
+
+.mainCardRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+  background-image: url('https://i.imgur.com/QDFW7Wp.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.vaultedReservesTitle {
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(81, 104, 255);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.amountValue {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(0, 0, 0);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cryptoList {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(73, 74, 121);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cryptoIconsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 0;
+}
+
+.cryptoIcon {
+  position: relative;
+}
+
+.cryptoIconBg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgb(6, 6, 9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -12px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: white;
+}
+
+.cryptoIcon:first-child .cryptoIconBg {
+  margin-left: 0;
+  z-index: 5;
+}
+
+.cryptoIcon:nth-child(2) .cryptoIconBg {
+  z-index: 4;
+}
+
+.cryptoIcon:nth-child(3) .cryptoIconBg {
+  z-index: 3;
+}
+
+.cryptoIcon:nth-child(4) .cryptoIconBg {
+  z-index: 2;
+}
+
+.cryptoIcon:nth-child(5) .cryptoIconBg {
+  z-index: 1;
+}
+
+.cryptoIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cryptoIconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.cryptoIconText {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.percentageChange {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.arrowUp {
+  color: rgb(81, 104, 255);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.percentageText {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--font-weight-medium);
+  color: rgb(81, 104, 255);
+  line-height: 1.2;
+}
+
+/* Quest Alert */
+.questAlert {
+  background: rgb(244, 245, 254);
+  border: none;
+  border-radius: 24px;
+  padding: 24px 32px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.questAlertContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 24px;
+}
+
+.questAlertLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.questAlertIcon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: rgb(0, 0, 0);
+  filter: brightness(0);
+}
+
+.questAlertText {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(81, 104, 255);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.questAlertButton {
+  background: rgb(81, 104, 255);
+  border: none;
+  border-radius: 16px;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.questAlertButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.questAlertButtonLabel {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: rgb(246, 248, 237);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.questAlertButtonIcon {
+  color: rgb(246, 248, 237);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Voting Cards Container */
+.votingCardsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Voting Card */
+.votingCard {
+  background: rgb(244, 245, 254);
+  border: 2px solid rgb(165, 165, 165);
+  border-radius: 24px;
+  padding: 20px;
+  width: 100%;
+}
+
+.votingCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.featuredBadge {
+  background: linear-gradient(180deg, rgb(34, 34, 36) 0%, rgb(21, 21, 27) 100%);
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.featuredText {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: rgb(255, 255, 255);
+  line-height: 1;
+}
+
+.votingCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.votingCardTitle {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(0, 0, 0);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.votingCardDescription {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(56, 56, 56);
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.votingCardPublisher {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(0, 0, 0);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.votesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.votesTitle {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(0, 0, 0);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.voteOption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.voteOptionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.voteNumber {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(0, 0, 0);
+  line-height: 1;
+}
+
+.votePercentage {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(0, 0, 0);
+  line-height: 1;
+}
+
+.voteProgressBar {
+  position: relative;
+  width: 100%;
+  height: 6px;
+}
+
+.voteProgressBarBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgb(217, 217, 217);
+  border-radius: 12px;
+}
+
+.voteProgressBarFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: rgb(13, 13, 13);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.voteCount {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(0, 0, 0);
+  line-height: 1;
+}
+
+.voteButtons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.voteButtonYes {
+  flex: 1;
+  background: linear-gradient(135deg, rgb(77, 42, 255) 0%, rgb(77, 44, 169) 32%, rgb(39, 20, 132) 74%, rgb(31, 31, 230) 100%);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 8px 0;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 -2px 1px rgba(255, 255, 255, 0.25);
+}
+
+.voteButtonYes:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.voteButtonNo {
+  flex: 1;
+  background: rgb(81, 104, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 8px 0;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 -2px 1px rgba(255, 255, 255, 0.25);
+}
+
+.voteButtonNo:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Quests Section */
+.questsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Right Section */
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Your Profile Card */
+.profileCard {
+  background: rgb(81, 104, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.profileCardTopImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.profileCardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.profileCardTitle {
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(255, 255, 255);
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Stats Section */
+.statsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24.69px;
+  width: 100%;
+}
+
+.statsTitle {
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(255, 255, 255);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.statsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8.23px;
+  width: 100%;
+}
+
+.statRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border: 2.06px solid rgba(240, 240, 240, 0.26);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.statLabel {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(236, 236, 236);
+  line-height: 1.2;
+}
+
+.statValue {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(236, 236, 236);
+  line-height: 1.2;
+}
+
+/* Locked Button */
+.lockedButton {
+  background: rgb(81, 104, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: inset 0 -2px 1px rgba(255, 255, 255, 0.25);
+}
+
+.lockedButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.rightRectangle {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectanglePlaceholder {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.pageTitle {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(39, 23, 49);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Search Bar */
+.searchContainer {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  color: rgba(107, 114, 128, 0.7);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(81, 104, 255, 0.1);
+}
+
+.searchInput::placeholder {
+  color: rgba(107, 114, 128, 0.5);
+}
+
+/* Tab System */
+.tabsContainer {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid rgba(107, 114, 128, 0.2);
+  padding-bottom: 0;
+}
+
+.tab {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: rgba(107, 114, 128, 0.8);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: -2px;
+}
+
+.tab:hover {
+  color: var(--color-primary);
+  background: rgba(81, 104, 255, 0.05);
+}
+
+.tabActive {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Quest Count */
+.questCount {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: rgba(107, 114, 128, 0.8);
+  margin-top: -16px;
+}
+
+/* Quest List */
+.questsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.questCard {
+  background: rgb(240, 240, 255);
+  border: 1.046px solid rgb(81, 104, 255);
+  border-radius: 12.55px;
+  width: 100%;
+  min-height: 120px;
+  padding: 36.17px 33px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.questCard:hover {
+  background: rgb(230, 230, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(81, 104, 255, 0.2);
+}
+
+.questCardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.questImageWrapper {
+  flex-shrink: 0;
+  margin-right: 25.1px;
+}
+
+.questImage {
+  width: 43.67px;
+  height: 43.67px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.questDetailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10.46px;
+  flex: 0 0 auto;
+  min-width: 363px;
+  margin-right: 106.7px;
+}
+
+.questCardTitle {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8.37px;
+  flex-wrap: wrap;
+  height: 19px;
+}
+
+.academyName,
+.date,
+.time {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  white-space: nowrap;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.usdcIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.questInfoGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.questInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 87.87px;
+  flex: 1;
+  min-width: 0;
+}
+
+.questName {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.usdcBonded,
+.usdcReward {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10.46px;
+  flex-shrink: 0;
+  height: 19px;
+}
+
+.usdcBonded span,
+.usdcReward span {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  white-space: nowrap;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.arrowIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  color: rgb(81, 104, 255);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrowIcon:hover {
+  transform: translateX(2px);
+  opacity: 0.8;
+}
+
+.noQuests {
+  padding: 60px 20px;
+  text-align: center;
+  color: rgba(107, 114, 128, 0.8);
+  font-family: var(--font-primary);
+  font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rightSection {
+    display: none;
+  }
+
+  .highlightCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .questPageContainer {
+    padding: 20px 16px;
+  }
+
+  .blackWrapper {
+    padding: 20px;
+  }
+
+  .additionalWrapper {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .bentoGrid {
+    gap: 16px;
+  }
+
+  .leftSection {
+    gap: 16px;
+  }
+
+  .mainCard {
+    min-height: 280px;
+  }
+
+  .mainCardContent {
+    min-height: 280px;
+  }
+
+  .mainCardLeft {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .vaultedReservesTitle {
+    font-size: 28px;
+  }
+
+  .amountValue {
+    font-size: 36px;
+  }
+
+  .cryptoList {
+    font-size: 16px;
+  }
+
+  .cryptoIconBg {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(6, 6, 9);
+    margin-left: -10px;
+  }
+
+  .cryptoIconText {
+    font-size: 10px;
+  }
+
+  .arrowUp {
+    width: 16px;
+    height: 16px;
+  }
+
+  .percentageText {
+    font-size: 16px;
+  }
+
+  .questAlert {
+    padding: 20px 24px;
+    min-height: 100px;
+    border-radius: 16px;
+  }
+
+  .questAlertContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .questAlertLeft {
+    width: 100%;
+  }
+
+  .questAlertIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .questAlertText {
+    font-size: 16px;
+  }
+
+  .questAlertButton {
+    width: 100%;
+    height: 48px;
+    padding: 0 20px;
+  }
+
+  .questAlertButtonLabel {
+    font-size: 14px;
+  }
+
+  .questAlertButtonIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .votingCardsContainer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .votingCard {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .votingCardContent {
+    gap: 10px;
+  }
+
+  .featuredBadge {
+    padding: 4px 10px;
+  }
+
+  .featuredText {
+    font-size: 10px;
+  }
+
+  .votingCardTitle {
+    font-size: 14px;
+  }
+
+  .votingCardDescription {
+    font-size: 11px;
+  }
+
+  .votingCardPublisher {
+    font-size: 10px;
+  }
+
+  .votesSection {
+    gap: 10px;
+  }
+
+  .votesTitle {
+    font-size: 12px;
+  }
+
+  .voteNumber,
+  .votePercentage {
+    font-size: 12px;
+  }
+
+  .voteCount {
+    font-size: 10px;
+  }
+
+  .voteButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .voteButtonYes,
+  .voteButtonNo {
+    padding: 8px 0;
+    font-size: 11px;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .searchInputWrapper {
+    max-width: 100%;
+  }
+
+  .tabsContainer {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .questCardContent {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .questDetailsSection {
+    min-width: 0;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .questInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .rightRectangle {
+    min-height: 150px;
+    padding: 20px;
+  }
+
+  .profileCard {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .profileCardContent {
+    gap: 16px;
+  }
+
+  .profileCardTitle {
+    font-size: 20px;
+  }
+
+  .statsSection {
+    gap: 16px;
+  }
+
+  .statsTitle {
+    font-size: 20px;
+  }
+
+  .statsList {
+    gap: 6px;
+  }
+
+  .statRow {
+    padding: 12px;
+  }
+
+  .statLabel,
+  .statValue {
+    font-size: 16px;
+  }
+
+  .lockedButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+

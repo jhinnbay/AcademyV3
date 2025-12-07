@@ -4,14 +4,15 @@
   justify-content: center;
   align-items: flex-start;
   margin-top: 32px;
-  margin-bottom: 32px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-bottom: 8px;
+  padding: 20px 20px;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero {
   width: 100%;
-  max-width: 1629.44px;
   height: 216.09px;
   background: rgba(255, 255, 255, 0.25);
   border: 1.17px solid rgba(92, 125, 255, 1);
@@ -37,17 +38,26 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://i.imgur.com/XPu93aE.png');
+  background-image: url('https://i.imgur.com/9UcWSXr.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 1;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1680px) {
-  .hero {
-    max-width: calc(100% - 52px);
-  }
+.logoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.logo {
+  object-fit: contain;
+}
+
 

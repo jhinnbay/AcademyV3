@@ -3,12 +3,12 @@
   height: 218.43px;
   background: #ECECEC;
   border: 1.17px solid #A4A4A4;
-  border-radius: 18.69px;
+  border-radius: 28px; /* iOS squircle-like full roundness */
   padding: 11.68px;
   display: flex;
   flex-direction: column;
-  gap: 2.34px;
-  box-shadow: 0 2.34px 4.67px rgba(0, 0, 0, 0.13);
+  gap: 8px; /* Increased space underneath header */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.13);
 }
 
 .header {
@@ -43,7 +43,7 @@
 .wrapper {
   flex: 1;
   background: linear-gradient(180deg, rgba(35, 35, 36, 1) 0%, rgba(21, 21, 27, 1) 100%);
-  border-radius: 16.35px;
+  border-radius: 12px; /* iOS squircle-like full roundness */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -69,7 +69,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://i.imgur.com/n0nkK7W.jpeg');
+  background-image: url('https://static.kyivpost.com/storage/2021/02/09/38aa40750706f1437a8675d623aa8092.jpg?w=1280&f=webp');
   background-size: cover;
   background-position: center;
   opacity: 1;

@@ -17,7 +17,7 @@ const PromptLibraryCard: React.FC = () => {
         </div>
       </div>
       <Link href="/forum" className={styles.footer}>
-        <span className={styles.footerText}>Explore Forums</span>
+        <span className={styles.footerText}>Messageboard</span>
       </Link>
     </div>
   );

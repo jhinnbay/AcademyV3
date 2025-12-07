@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styles from './ForumPage.module.css';
-import { Navbar } from './Navbar';
 import { AnnouncementBanner } from './AnnouncementBanner';
 import { InviteBanner } from './InviteBanner';
 import { ForumCard } from './ForumCard';
@@ -12,7 +11,6 @@ import { PixelIcon } from './PixelIcon';
 export function ForumPage() {
   return (
     <div className={styles.container}>
-      <Navbar />
 
       <div className={styles.mainContent}>
         <div className={styles.contentWrapper}>

@@ -1,0 +1,310 @@
+.questsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  color: rgb(39, 23, 49); /* #271830 - from Figma */
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.viewAllButton {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 14px;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1.09px solid var(--color-primary);
+  border-radius: 8.74px;
+  padding: 10.93px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.viewAllButton:hover {
+  opacity: 1;
+  background: rgba(81, 104, 255, 0.1);
+}
+
+.questBadge {
+  background: linear-gradient(to bottom, rgba(236, 236, 255, 1), rgba(225, 225, 254, 1));
+  border: 1.34px solid rgb(31, 41, 55);
+  border-radius: 5.35px;
+  padding: 13.39px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  flex-wrap: wrap;
+}
+
+.questTitle {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 14px;
+  color: rgb(46, 30, 113); /* #2E1E71 - from Figma */
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.questDetails {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 14px;
+  color: rgb(31, 41, 55);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+/* Quest List Cards */
+.questsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.questCard {
+  background: rgb(240, 240, 255); /* #F0F0FF - from Figma */
+  border: 1.046px solid rgb(81, 104, 255); /* var(--color-primary) */
+  border-radius: 12.55px;
+  width: 100%;
+  min-height: 120px;
+  padding: 36.17px 33px;
+  margin-bottom: 0;
+}
+
+.questCardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.questImageWrapper {
+  flex-shrink: 0;
+  margin-right: 25.1px;
+}
+
+.questImage {
+  width: 43.67px;
+  height: 43.67px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.questImagePlaceholder {
+  width: 43.67px;
+  height: 43.67px;
+  background: rgba(81, 104, 255, 0.2);
+  border-radius: 4px;
+}
+
+.questDetailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10.46px;
+  flex: 0 0 auto;
+  min-width: 363px;
+  margin-right: 106.7px;
+}
+
+.questCardTitle {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8.37px;
+  flex-wrap: wrap;
+  height: 19px;
+}
+
+.academyName,
+.date,
+.time,
+.base {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  white-space: nowrap;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.cryptoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 19px;
+}
+
+.usdcIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.questInfoGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.questInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 87.87px;
+  flex: 1;
+  min-width: 0;
+}
+
+.questName {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.usdcBonded,
+.usdcReward {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10.46px;
+  flex-shrink: 0;
+  height: 19px;
+}
+
+.usdcBonded span,
+.usdcReward span {
+  font-family: var(--font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  white-space: nowrap;
+  height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.arrowIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  color: rgb(81, 104, 255); /* var(--color-primary) */
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrowIcon:hover {
+  transform: translateX(2px);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .viewAllButton {
+    width: 100%;
+  }
+
+  .questBadge {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .questCardContent {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .questDetailsSection {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .questInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+}

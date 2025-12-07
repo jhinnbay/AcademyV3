@@ -32,7 +32,7 @@
   position: relative;
   overflow: hidden;
   min-height: 0;
-  background-image: url('https://i.imgur.com/tU93RPS.png');
+  background-image: url('https://i.imgur.com/QDFW7Wp.png');
   background-size: cover;
   background-position: center;
 }
@@ -44,7 +44,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://i.imgur.com/tU93RPS.png');
+  background-image: url('https://i.imgur.com/QDFW7Wp.png');
   background-size: cover;
   background-position: center;
   opacity: 1;
@@ -68,15 +68,15 @@
   font-family: var(--font-button);
   font-size: 14px;
   font-weight: 400;
-  color: #FFFFFF;
+  color: var(--color-text-dark);
   text-transform: uppercase;
 }
 
 .progressBar {
   width: calc(100% - 28px);
   height: 9.04px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1.13px solid #FFFFFF;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1.13px solid var(--color-text-dark);
   border-radius: 6.78px;
   position: relative;
   z-index: 1;
@@ -91,8 +91,8 @@
   width: 60%;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(217, 217, 217, 0) 100%
+    rgb(0, 255, 0) 0%,
+    rgba(0, 255, 0, 0) 100%
   );
   border-radius: 6.78px;
   position: absolute;
@@ -104,7 +104,7 @@
 
 .footer {
   height: 53.11px;
-  background: #5180FF;
+  background: var(--color-primary);
   border: 1.13px solid #A4A4A4;
   border-radius: 0 0 18.69px 18.69px;
   display: flex;
@@ -119,7 +119,7 @@
 }
 
 .footer:hover {
-  background: #3d6ae6;
+  opacity: 0.9;
   transform: translateY(-1px);
   box-shadow: 
     0 2.26px 0 rgba(172, 172, 172, 0.5) inset,
@@ -130,7 +130,7 @@
   font-family: var(--font-primary);
   font-size: 18px;
   font-weight: 400;
-  color: #ECECEC;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 

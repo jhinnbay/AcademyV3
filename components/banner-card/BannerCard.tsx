@@ -12,7 +12,7 @@ const BannerCard: React.FC = () => {
             <p className={styles.subtitle}>Reach your learning goals by finding hand-picked Digital Classes.</p>
           </div>
           <button className={styles.actionButton}>
-            <span className={styles.buttonText}>Entry Exams</span>
+            <span className={styles.buttonText}>Daily Faucet</span>
             <Image 
               src="/icons/Eye.svg" 
               alt="Eye icon" 

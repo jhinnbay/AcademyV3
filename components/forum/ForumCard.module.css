@@ -1,7 +1,7 @@
 .card {
   display: flex;
-  height: 88px;
-  padding: 10px 32px;
+  min-height: 88px;
+  padding: 16px 32px;
   justify-content: space-between;
   align-items: center;
   border: 1px solid rgba(107, 114, 128, 0.5);
@@ -30,28 +30,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
   max-width: 654px;
 }
 
 .title {
   font-family: var(--font-primary);
-  font-size: 0.875rem;
+  font-size: 16px;
   font-weight: var(--font-weight-medium);
   background: var(--gradient-futuristic-floss);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0;
+  line-height: 1.2;
 }
 
 .description {
   font-family: var(--font-primary);
-  font-size: 0.875rem;
-  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
   color: rgba(107, 114, 128, 0.9);
-  line-height: 18px;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -62,12 +63,12 @@
 }
 
 .badge {
-  height: 40px;
-  padding: 8px 16px;
-  border-radius: 44px;
-  font-size: 10px;
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
+  min-height: 40px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
   text-align: center;
   margin: 0 auto;
   font-family: var(--font-primary);

@@ -4,7 +4,7 @@ import styles from './CreateAccountButton.module.css';
 const CreateAccountButton: React.FC = () => {
   return (
     <button className={styles.createAccountButton}>
-      <span className={styles.buttonText}>CREATE A NEW ACCOUNT</span>
+      <span className={styles.buttonText}>Welcome User!</span>
       <div className={styles.logo}></div>
     </button>
   );

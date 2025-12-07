@@ -1,12 +1,13 @@
 .footer {
   display: flex;
-  padding: 36px 48px;
+  padding: 40px 48px;
   justify-content: space-between;
   align-items: center;
   border: 2px solid var(--color-primary);
   background: rgba(46, 45, 122, 0.8);
   box-shadow: 0px 6px 15px -2px rgba(16, 24, 40, 0.08);
   width: 100%;
+  border-radius: 12px;
 }
 
 .content {
@@ -14,15 +15,15 @@
   width: 705px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 32px;
 }
 
 .title {
   font-family: var(--font-primary);
-  font-size: 46px;
+  font-size: 48px;
   font-weight: var(--font-weight-semibold);
-  line-height: 57px;
-  letter-spacing: -0.92px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   background: var(--gradient-futuristic-floss);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -31,12 +32,12 @@
 }
 
 .description {
-  height: 136px;
+  min-height: auto;
   font-family: var(--font-primary);
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: var(--font-weight-semibold);
-  line-height: 34px;
-  letter-spacing: -0.48px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
   background: var(--gradient-futuristic-floss);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -47,22 +48,22 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .primaryButton {
-  padding: 16px 24px;
+  padding: 12px 24px;
   background: var(--gradient-futuristic-floss);
   color: var(--color-primary);
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: var(--font-weight-semibold);
-  line-height: 24px;
-  letter-spacing: -0.32px;
+  line-height: 1.5;
   border-radius: 12px;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
   font-family: var(--font-primary);
+  height: 48px;
 }
 
 .primaryButton:hover {
@@ -70,14 +71,13 @@
 }
 
 .secondaryButton {
-  padding: 16px 24px;
+  padding: 12px 24px;
   border: 2px solid;
   border-image: linear-gradient(to bottom, var(--gradient-futuristic-floss-start), var(--gradient-futuristic-floss-end)) 1;
   background: transparent;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: var(--font-weight-semibold);
-  line-height: 24px;
-  letter-spacing: -0.32px;
+  line-height: 1.5;
   background: var(--gradient-futuristic-floss);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -86,6 +86,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font-primary);
+  height: 48px;
 }
 
 .secondaryButton:hover {

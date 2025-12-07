@@ -1,5 +1,5 @@
 import React from 'react';
-import LibraryCard from '@/components/library-card/LibraryCard';
+import Image from 'next/image';
 import CreateAccountButton from '@/components/nav-buttons/CreateAccountButton';
 import SignInButton from '@/components/nav-buttons/SignInButton';
 import ExploreQuestsButton from '@/components/nav-buttons/ExploreQuestsButton';
@@ -10,7 +10,15 @@ import styles from './SideNavigation.module.css';
 const SideNavigation: React.FC = () => {
   return (
     <div className={styles.sideNavigation}>
-      <LibraryCard />
+      <div className={styles.membershipImage}>
+        <Image 
+          src="https://i.imgur.com/875phfv.png" 
+          alt="Membership" 
+          fill
+          className={styles.membershipImg}
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
       <CreateAccountButton />
       <SignInButton />
       <ExploreQuestsButton />

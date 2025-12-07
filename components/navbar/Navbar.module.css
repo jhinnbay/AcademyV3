@@ -1,0 +1,422 @@
+.navbar {
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+  background: #F4F5FE;
+  border-bottom: 2px solid #000000;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Top Section */
+.topSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  gap: 60px;
+  min-height: 100px;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 37.04px;
+  flex: 1;
+}
+
+.logoWrapper {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.academyName {
+  font-family: var(--font-primary);
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  color: #000000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24.69px;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24.69px;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  height: 48px;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: #5168FF;
+}
+
+.navButton:hover .buttonLabel {
+  color: #ECECEC;
+}
+
+.navButton:hover .homeIcon {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+.navButton:hover .questIcon {
+  filter: brightness(0) invert(1);
+}
+
+.navButtonActive {
+  background: #5168FF;
+  border: 1px solid #5168FF;
+}
+
+.buttonLabel {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: rgba(163, 163, 163, 1);
+  white-space: nowrap;
+}
+
+.buttonLabelActive {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: #ECECEC;
+  white-space: nowrap;
+}
+
+.homeIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+  opacity: 0.64;
+}
+
+.navButtonActive .homeIcon {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+}
+
+.questIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.navButtonActive .questIcon {
+  filter: brightness(0) invert(1);
+}
+
+.filterIcon {
+  width: 20px;
+  height: 20px;
+  color: rgba(17, 24, 39, 1);
+  flex-shrink: 0;
+}
+
+.leftIcons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.messageButton {
+  display: flex;
+  width: 37px;
+  height: 37px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--color-primary);
+  box-shadow: 0px 1px 10.4px 0px rgba(81, 104, 255, 0.40);
+  position: relative;
+}
+
+.messageButton:hover {
+  background: rgba(81, 104, 255, 0.9);
+}
+
+.messageIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.notificationDot {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-secondary);
+  border-radius: 50%;
+}
+
+.hamburgerButton {
+  display: flex;
+  width: 37px;
+  height: 37px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--color-secondary);
+  box-shadow: 0px 1px 10.4px 0px rgba(98, 190, 143, 0.40);
+}
+
+.hamburgerButton:hover {
+  background: rgba(98, 190, 143, 0.9);
+}
+
+.hamburgerIcon {
+  width: 20px;
+  height: 20px;
+  background: white;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Bottom Section - Search */
+.bottomSection {
+  padding: 16px 40px;
+  min-height: 70px;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+}
+
+.searchIconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.menuAltIcon {
+  width: 32px;
+  height: 32px;
+  color: #000000;
+}
+
+.searchInputContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.searchInputWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 24px;
+  padding: 12px 16px;
+  gap: 12px;
+  height: 48px;
+  width: 100%;
+}
+
+.searchIconLeft {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.searchIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  color: rgba(17, 24, 39, 1);
+  background: transparent;
+  padding: 0;
+  height: auto;
+}
+
+.searchInput::placeholder {
+  color: rgba(156, 163, 175, 1);
+}
+
+.searchRightContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.searchRightText {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: rgba(107, 114, 128, 1);
+}
+
+.searchRightIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchRightIcon .squareInner {
+  background: rgba(17, 24, 39, 1);
+  border-radius: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .topSection {
+    gap: 40px;
+    padding: 12.35px 20px;
+  }
+
+  .academyName {
+    font-size: 36px;
+  }
+
+  .logoWrapper {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    min-height: 362.16px;
+  }
+
+  .topSection {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .leftContent {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rightContent {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .academyName {
+    font-size: 28px;
+  }
+
+  .logoWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .navButton {
+    height: auto;
+    padding: 12px 24px;
+  }
+
+  .buttonLabel,
+  .buttonLabelActive {
+    font-size: 18px;
+  }
+
+  .searchInputWrapper {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 74.92px;
+  }
+
+  .searchInput {
+    font-size: 18px;
+    min-width: 200px;
+  }
+
+  .helperText {
+    font-size: 16px;
+  }
+}
+
+

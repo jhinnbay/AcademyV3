@@ -11,7 +11,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { label: 'Home', href: '/' },
+    { label: 'Home', href: '/home' },
     { label: 'Forum', href: '/forum' },
     { label: 'Quests', href: '/quests' },
     { label: 'Catalog', href: '/catalog' },
