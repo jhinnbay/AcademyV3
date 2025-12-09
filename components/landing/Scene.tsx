@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, useRef, useEffect } from "react";
+import { Suspense, useRef, useEffect, memo } from "react";
 import * as THREE from "three";
 
 import { waveFragmentShader, waveVertexShader } from './shaders';
@@ -9,12 +9,12 @@ import './scene.css';
 
 const DPR = 1;
 
-const DitheredWaves = () => {
+const DitheredWaves = memo(() => {
   const mesh = useRef<THREE.Mesh>(null);
   const { viewport } = useThree();
   const mouseRef = useRef({ x: 0.5, y: 0.5 });
 
-  const uniforms = {
+  const uniforms = useRef({
     time: {
       value: 0.0,
     },
@@ -22,7 +22,7 @@ const DitheredWaves = () => {
     colorNum: new THREE.Uniform(4.0),
     pixelSize: new THREE.Uniform(2.0),
     mouse: new THREE.Uniform(new THREE.Vector2(0.5, 0.5)),
-  };
+  }).current;
 
   // Track mouse movement
   useEffect(() => {
@@ -65,23 +65,28 @@ const DitheredWaves = () => {
       </mesh>
     </>
   );
-};
+});
 
-const Scene = () => {
+DitheredWaves.displayName = 'DitheredWaves';
+
+const Scene = memo(() => {
   return (
     <Canvas 
       shadows 
       camera={{ position: [0, 0, 6] }} 
       dpr={[1, 1]}
-      style={{ width: '100%', height: '100%' }}
-      gl={{ antialias: false }}
+      style={{ width: '100%', height: '100%', background: 'var(--color-background)' }}
+      gl={{ antialias: false, powerPreference: 'high-performance' }}
+      frameloop="always"
     >
       <Suspense fallback={null}>
         <DitheredWaves />
       </Suspense>
     </Canvas>
   );
-};
+});
+
+Scene.displayName = 'Scene';
 
 export default Scene;
 

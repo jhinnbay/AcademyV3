@@ -10,39 +10,14 @@ const getTourSteps = () => [
     element: 'body',
   },
   {
-    title: 'Create Your Account',
-    intro: 'Start by creating your account to access personalized learning paths and track your progress.',
-    element: '[data-intro="create-account"]',
-  },
-  {
-    title: 'Sign In With Ethereum',
-    intro: 'Connect your Ethereum wallet to sign in securely and access blockchain-powered features.',
-    element: '[data-intro="sign-in"]',
-  },
-  {
-    title: 'Explore Quests',
-    intro: 'Browse available quests and challenges. Complete them to earn USDC rewards and advance your learning journey.',
-    element: '[data-intro="explore-quests"]',
-  },
-  {
-    title: 'IPFS Library',
-    intro: 'Browse educational content stored on IPFS. Explore books, resources, and learning materials in our decentralized library.',
-    element: '[data-intro="library-card"]',
-  },
-  {
-    title: 'Farcaster Friends',
-    intro: 'Connect with friends from Farcaster and build your learning community. See top contributors and engage with the community.',
-    element: '[data-intro="farcaster-friends"]',
-  },
-  {
     title: 'AI Learning Paths',
     intro: 'Discover personalized learning paths recommended by Rubi AI. Click "Daily Faucet" to get AI-powered recommendations tailored to your goals!',
     element: '[data-intro="banner-card"]',
   },
   {
-    title: 'Prompt Library & Messageboard',
-    intro: 'Access the prompt library and messageboard to connect with the community, share knowledge, and collaborate on learning projects.',
-    element: '[data-intro="prompt-library"]',
+    title: 'Messageboard',
+    intro: 'Jump into the messageboard to connect with the community, share knowledge, and collaborate on learning projects.',
+    element: '[data-intro="messageboard-card"]',
   },
   {
     title: 'Active Quests',
@@ -78,6 +53,7 @@ export const startOnboardingTour = async () => {
     doneLabel: 'Got it!',
     tooltipClass: 'customTooltip',
     highlightClass: 'customHighlight',
+    overlayOpacity: 0.5,
   });
 
   // Set initial tooltip width to prevent abrupt changes and improve readability
@@ -166,109 +142,15 @@ export const startOnboardingTour = async () => {
         tooltip.style.zIndex = '999999';
         tooltip.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
         
-        // Position tooltip relative to highlighted element, staying within viewport
-        if (step && step.element !== 'body') {
-          // Find the highlighted element - try the actual element selector first
-          let highlightedElement: HTMLElement | null = null;
-          
-          if (step.element.startsWith('[')) {
-            highlightedElement = document.querySelector(step.element) as HTMLElement;
-          }
-          
-          // Fallback to intro.js's highlighted element
-          if (!highlightedElement) {
-            highlightedElement = document.querySelector('.introjs-showElement') as HTMLElement;
-          }
-          if (!highlightedElement) {
-            highlightedElement = document.querySelector('.introjs-relativePosition') as HTMLElement;
-          }
-          
-          if (highlightedElement && !isPositioning) {
-            isPositioning = true;
-            
-            // Get element position without scrolling (to avoid jumping)
-            const elementRect = highlightedElement.getBoundingClientRect();
-            const tooltipRect = tooltip.getBoundingClientRect();
-            
-            // Only scroll if element is not visible
-            const isElementVisible = 
-              elementRect.top >= 0 &&
-              elementRect.left >= 0 &&
-              elementRect.bottom <= viewportHeight &&
-              elementRect.right <= viewportWidth;
-            
-            // Position tooltip function
-            const positionTooltip = () => {
-              const currentElementRect = highlightedElement!.getBoundingClientRect();
-              const currentTooltipRect = tooltip.getBoundingClientRect();
-              
-              // Calculate preferred position (right side of element, vertically centered)
-              let preferredLeft = currentElementRect.right + 20;
-              let preferredTop = currentElementRect.top + (currentElementRect.height / 2) - (currentTooltipRect.height / 2);
-              
-              // If tooltip would go off right edge, position it on the left side
-              if (preferredLeft + currentTooltipRect.width > viewportWidth - 20) {
-                preferredLeft = currentElementRect.left - currentTooltipRect.width - 20;
-              }
-              
-              // If tooltip would go off left edge, position it on the right side
-              if (preferredLeft < 20) {
-                preferredLeft = currentElementRect.right + 20;
-                // If still off, center it
-                if (preferredLeft + currentTooltipRect.width > viewportWidth - 20) {
-                  preferredLeft = (viewportWidth - currentTooltipRect.width) / 2;
-                }
-              }
-              
-              // If tooltip would go off bottom, align to bottom of element
-              if (preferredTop + currentTooltipRect.height > viewportHeight - 20) {
-                preferredTop = currentElementRect.bottom - currentTooltipRect.height - 20;
-              }
-              
-              // If tooltip would go off top, align to top of element
-              if (preferredTop < 20) {
-                preferredTop = currentElementRect.top;
-              }
-              
-              // Ensure tooltip stays within viewport bounds
-              preferredLeft = Math.max(20, Math.min(preferredLeft, viewportWidth - currentTooltipRect.width - 20));
-              preferredTop = Math.max(20, Math.min(preferredTop, viewportHeight - currentTooltipRect.height - 20));
-              
-              // Apply positioning
-              tooltip.style.position = 'fixed';
-              tooltip.style.left = `${preferredLeft}px`;
-              tooltip.style.top = `${preferredTop}px`;
-              tooltip.style.margin = '0';
-              tooltip.style.transform = 'none';
-              
-              isPositioning = false;
-            };
-            
-            // Position immediately
-            positionTooltip();
-            
-            // If element not visible, scroll and reposition
-            if (!isElementVisible) {
-              highlightedElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-              setTimeout(positionTooltip, 400);
-            }
-          }
-        } else {
-          // For body elements, just ensure it stays within viewport
-          const tooltipRect = tooltip.getBoundingClientRect();
-          if (tooltipRect.bottom > viewportHeight) {
-            tooltip.style.top = `${viewportHeight - tooltipRect.height - 20}px`;
-          }
-          if (tooltipRect.right > viewportWidth) {
-            tooltip.style.left = `${viewportWidth - tooltipRect.width - 20}px`;
-          }
-          if (tooltipRect.left < 0) {
-            tooltip.style.left = '20px';
-          }
-          if (tooltipRect.top < 0) {
-            tooltip.style.top = '20px';
-          }
-        }
+        // Center tooltip in the viewport to avoid edge shifting
+        const tooltipRect = tooltip.getBoundingClientRect();
+        const centeredLeft = (viewportWidth - tooltipRect.width) / 2;
+        const centeredTop = (viewportHeight - tooltipRect.height) / 2;
+        tooltip.style.position = 'fixed';
+        tooltip.style.left = `${Math.max(20, centeredLeft)}px`;
+        tooltip.style.top = `${Math.max(20, centeredTop)}px`;
+        tooltip.style.margin = '0';
+        tooltip.style.transform = 'none';
         
         // Ensure tooltip text is readable
         const titleElement = tooltip.querySelector('.introjs-tooltiptitle') as HTMLElement;
@@ -298,15 +180,15 @@ export const startOnboardingTour = async () => {
           buttonsContainer.style.display = 'flex';
           buttonsContainer.style.justifyContent = 'space-between';
           buttonsContainer.style.alignItems = 'center';
+          buttonsContainer.style.gap = '12px';
           buttonsContainer.style.position = 'relative';
-          buttonsContainer.style.gap = '8px';
           
           // Get buttons
           const prevButton = tooltip.querySelector('.introjs-prevbutton') as HTMLElement;
           const skipButton = tooltip.querySelector('.introjs-skipbutton') as HTMLElement;
           const nextButton = tooltip.querySelector('.introjs-nextbutton') as HTMLElement;
           
-          // Position buttons: Previous (left), Skip (absolute center), Next (right)
+          // Position buttons: Previous (left), Skip (center), Next (right)
           if (prevButton) {
             prevButton.style.order = '1';
             prevButton.style.marginRight = 'auto';
@@ -314,10 +196,11 @@ export const startOnboardingTour = async () => {
           
           if (skipButton) {
             skipButton.style.order = '2';
-            skipButton.style.position = 'absolute';
-            skipButton.style.left = '50%';
-            skipButton.style.transform = 'translateX(-50%)';
-            skipButton.style.zIndex = '10';
+            skipButton.style.position = 'relative';
+            skipButton.style.left = '0';
+            skipButton.style.transform = 'none';
+            skipButton.style.margin = '0 auto';
+            skipButton.style.flex = '0 0 auto';
           }
           
           if (nextButton) {
@@ -366,7 +249,7 @@ export const startOnboardingTour = async () => {
       // Improve highlight overlay readability
       const overlay = document.querySelector('.introjs-overlay') as HTMLElement;
       if (overlay) {
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
       }
       
       const highlight = document.querySelector('.introjs-helperLayer') as HTMLElement;

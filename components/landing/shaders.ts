@@ -173,11 +173,30 @@ void main() {
   vec3 col = vec3(0.0);
 
   float f = pattern(uv);
-
-  // Use greenish teal for light portions instead of white
-  vec3 darkColor = vec3(0.0, 0.0, 0.0); // Black
-  vec3 lightColor = vec3(0.2, 0.8, 0.7); // Greenish teal (RGB: ~51, 204, 179)
-  col = mix(darkColor, lightColor, f);
+  
+  // Design system colors
+  vec3 purple = vec3(0.318, 0.408, 1.0); // #5168FF (primary purple)
+  vec3 whiteLight = vec3(0.956, 0.961, 0.996); // #F4F5FE (background)
+  vec3 gradientStart = vec3(0.925, 0.925, 1.0); // #ECECFF
+  vec3 gradientEnd = vec3(0.882, 0.882, 0.996); // #E1E1FE
+  
+  // Create a gradient from purple to white based on noise pattern
+  // Use the pattern value to mix between colors - make more solid
+  float purpleAmount = smoothstep(0.2, 0.8, f);
+  float gradientMix = smoothstep(0.0, 1.0, f);
+  
+  // Mix gradient colors first - increase saturation for more solid look
+  vec3 gradientColor = mix(gradientStart, gradientEnd, gradientMix);
+  
+  // Then mix in purple accents - increase opacity for more solid background
+  col = mix(gradientColor, purple, purpleAmount * 0.5);
+  
+  // Add some white highlights - reduce for more solid appearance
+  float whiteHighlight = smoothstep(0.5, 0.85, f);
+  col = mix(col, whiteLight, whiteHighlight * 0.15);
+  
+  // Increase overall saturation and brightness for more solid appearance
+  col = mix(col, col * 1.1, 0.3);
 
   // Apply dithering directly
   vec2 screenUV = gl_FragCoord.xy;

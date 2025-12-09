@@ -4,12 +4,12 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import styles from './QuestPage.module.css';
 
-// USDC Icon Component
-const USDCIcon: React.FC<{ size?: number }> = ({ size = 18.83 }) => {
+// Shard Icon Component
+const ShardIcon: React.FC<{ size?: number }> = ({ size = 18.83 }) => {
   return (
     <Image
-      src="/icons/usd-coin-usdc-logo.svg"
-      alt="USDC"
+      src="/icons/shard.svg"
+      alt="Shard"
       width={size}
       height={size}
       className={styles.usdcIcon}
@@ -85,11 +85,11 @@ const QuestCard: React.FC<QuestCardProps> = ({
           <div className={styles.questInfo}>
             <div className={styles.questName}>{questName}</div>
             <div className={styles.usdcBonded}>
-              <USDCIcon />
+              <ShardIcon />
               <span>{usdcBonded}</span>
             </div>
             <div className={styles.usdcReward}>
-              <USDCIcon />
+              <ShardIcon />
               <span>{usdcReward}</span>
             </div>
           </div>
@@ -271,7 +271,7 @@ const QuestPage: React.FC = () => {
                 <div className={styles.mainCardContent}>
                   <div className={styles.mainCardLeft}>
                     <h2 className={styles.vaultedReservesTitle}>Vaulted Reserves</h2>
-                    <div className={styles.amountValue}>$324,946,254.84</div>
+                    <div className={styles.amountValue}>$50,000</div>
                     <div className={styles.cryptoList}>ETH, BTC, DOT, INU, & SOL</div>
                     <div className={styles.cryptoIconsGroup}>
                       <div className={styles.cryptoIcon}>

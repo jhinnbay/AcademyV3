@@ -293,7 +293,7 @@ button,
 
 /* Overlay */
 .introjs-overlay {
-  background-color: rgba(0, 0, 0, 0.7) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }

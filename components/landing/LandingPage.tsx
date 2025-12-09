@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -9,7 +9,7 @@ import styles from './LandingPage.module.css';
 // Dynamically import Scene to avoid SSR issues with Three.js
 const Scene = dynamic(() => import('./Scene'), {
   ssr: false,
-  loading: () => <div className={styles.canvas} style={{ background: '#000' }} />,
+  loading: () => <div className={styles.canvas} style={{ background: 'var(--color-background)' }} />,
 });
 
 const LandingPage: React.FC = () => {
@@ -30,10 +30,13 @@ const LandingPage: React.FC = () => {
     router.push('/home');
   };
 
+  // Memoize Scene to prevent re-renders when form state changes
+  const memoizedScene = useMemo(() => <Scene />, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.canvas}>
-        <Scene />
+        {memoizedScene}
       </div>
       
       <div className={styles.loginContainer}>

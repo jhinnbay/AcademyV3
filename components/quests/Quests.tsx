@@ -5,12 +5,12 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './Quests.module.css';
 
-// USDC Icon Component
-const USDCIcon: React.FC<{ size?: number }> = ({ size = 18.83 }) => {
+// Shard Icon Component
+const ShardIcon: React.FC<{ size?: number }> = ({ size = 18.83 }) => {
   return (
     <Image
-      src="/icons/usd-coin-usdc-logo.svg"
-      alt="USDC"
+      src="/icons/shard.svg"
+      alt="Shard"
       width={size}
       height={size}
       className={styles.usdcIcon}
@@ -76,11 +76,11 @@ const QuestCard: React.FC<QuestCardProps> = ({
           <div className={styles.questInfo}>
             <div className={styles.questName}>{questName}</div>
             <div className={styles.usdcBonded}>
-              <USDCIcon />
+              <ShardIcon />
               <span>{usdcBonded}</span>
             </div>
             <div className={styles.usdcReward}>
-              <USDCIcon />
+              <ShardIcon />
               <span>{usdcReward}</span>
             </div>
           </div>

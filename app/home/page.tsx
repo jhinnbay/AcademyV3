@@ -32,19 +32,19 @@ export default function Home() {
             <Quests />
           </div>
           <div className={styles.eventsAndPromptRow}>
-            <div className={styles.eventsSection}>
-              <h1 className={styles.sectionTitle}>Events</h1>
-              <EventCard
-                imageUrl="https://i.imgur.com/CBTfcoP.jpeg"
-                heading="Xmas Party"
-                badge1Text="Workshop"
-                badge2Text="Dec 15"
-                authorName="Alex Rivera"
-                authorRole="Event Curator"
-                authorAvatar="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-              />
-            </div>
-            <div className={styles.promptSection} data-intro="prompt-library">
+          <div className={styles.eventsSection}>
+            <h1 className={styles.sectionTitle}>Events</h1>
+            <EventCard
+              imageUrl="https://i.imgur.com/CBTfcoP.jpeg"
+              heading="Xmas Party"
+              badge1Text="Workshop"
+              badge2Text="Dec 15"
+              authorName="Alex Rivera"
+              authorRole="Event Curator"
+              authorAvatar="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+            />
+          </div>
+          <div className={styles.promptSection}>
               <h1 className={styles.sectionTitle}>Forum</h1>
               <PromptLibraryCard />
               <div data-intro="farcaster-friends">

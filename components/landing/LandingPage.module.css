@@ -12,7 +12,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: #000;
+  background: var(--color-background);
 }
 
 .canvas::after {
@@ -95,26 +95,30 @@
 }
 
 .loginCard {
-  background: rgba(23, 23, 23, 0.5);
-  backdrop-filter: blur(30px);
-  border: 1px solid rgba(110, 110, 110, 1);
-  border-radius: 12px;
+  background-color: rgba(244, 245, 254, 0.89); /* #F4F5FE - matches search modal */
+  border: 2px solid white;
+  border-radius: 28px; /* Squircle-like rounding (iOS style) */
   width: 100%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  min-height: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.6s ease-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardContent {
-  padding: 20px 1.5rem 28px 1.5rem;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .companyHeader {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 .companyLogo {
@@ -125,7 +129,7 @@
 }
 
 .heading {
-  color: rgba(245, 245, 245, 1);
+  color: var(--color-text-dark);
   font-family: var(--font-primary);
   font-size: 30px;
   font-weight: var(--font-weight-bold);
@@ -164,7 +168,7 @@
 
 .label {
   display: block;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-text-dark);
   font-size: 14px;
   font-weight: var(--font-weight-medium);
   font-family: var(--font-primary);
@@ -226,7 +230,7 @@
 }
 
 .checkboxLabel {
-  color: rgba(245, 245, 245, 1);
+  color: var(--color-text-dark);
   font-size: 14px;
   font-family: var(--font-primary);
   cursor: pointer;
@@ -322,7 +326,8 @@
 
 .signupLink {
   text-align: center;
-  color: rgba(236, 236, 236, 0.7);
+  color: var(--color-text-dark);
+  opacity: 0.7;
   font-size: 14px;
   font-family: var(--font-primary);
 }
