@@ -41,6 +41,7 @@ const NotificationIcon: React.FC<{ size?: number }> = ({ size = 36 }) => {
 const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => {
@@ -66,7 +67,7 @@ const Navbar: React.FC = () => {
           <h1 className={styles.academyName}>Mental Wealth Academy</h1>
         </div>
 
-        {/* Search Bar */}
+        {/* Search Bar - Hidden on mobile, icon only on tablet */}
         <div className={styles.searchContainer} ref={searchContainerRef}>
           <div className={styles.searchInputContainer}>
             <div className={styles.searchInputWrapper}>
@@ -90,6 +91,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className={styles.rightContent}>
+          {/* Desktop Navigation Links */}
           <div className={styles.linksContainer}>
             {/* Home Button */}
             <Link href="/home" className={`${styles.navButton} ${isActive('/home') ? styles.navButtonActive : ''}`}>
@@ -127,8 +129,8 @@ const Navbar: React.FC = () => {
               <span className={isActive('/quests') ? styles.buttonLabelActive : styles.buttonLabel}>Quests</span>
             </Link>
 
-          {/* Library Button */}
-          <Link href="/library" className={`${styles.navButton} ${isActive('/library') ? styles.navButtonActive : ''}`}>
+            {/* Library Button */}
+            <Link href="/library" className={`${styles.navButton} ${isActive('/library') ? styles.navButtonActive : ''}`}>
               <Image
                 src="/icons/bookicon.svg"
                 alt="Library"
@@ -136,11 +138,12 @@ const Navbar: React.FC = () => {
                 height={20}
                 className={styles.questIcon}
               />
-            <span className={isActive('/library') ? styles.buttonLabelActive : styles.buttonLabel}>Library</span>
+              <span className={isActive('/library') ? styles.buttonLabelActive : styles.buttonLabel}>Library</span>
             </Link>
           </div>
 
-          <div className={styles.leftIcons}>
+          {/* Right Icons */}
+          <div className={styles.rightIcons}>
             <div className={styles.shardsCounter}>
               <Image
                 src="/icons/shard.svg"
@@ -157,7 +160,77 @@ const Navbar: React.FC = () => {
                 <span className={styles.notificationDot}></span>
               </div>
             </button>
+            {/* Mobile Menu Toggle */}
+            <button 
+              className={styles.mobileMenuButton}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <MenuIcon size={24} />
+            </button>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+        <div className={styles.mobileLinksContainer}>
+          <Link 
+            href="/home" 
+            className={`${styles.mobileNavButton} ${isActive('/home') ? styles.mobileNavButtonActive : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Image
+              src="/icons/home.svg"
+              alt="Home"
+              width={20}
+              height={20}
+              className={styles.homeIcon}
+            />
+            <span>Home</span>
+          </Link>
+          <Link 
+            href="/forum" 
+            className={`${styles.mobileNavButton} ${isActive('/forum') ? styles.mobileNavButtonActive : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Image
+              src="/icons/Survey.svg"
+              alt="Forum"
+              width={20}
+              height={20}
+              className={styles.questIcon}
+            />
+            <span>Forum</span>
+          </Link>
+          <Link 
+            href="/quests" 
+            className={`${styles.mobileNavButton} ${isActive('/quests') ? styles.mobileNavButtonActive : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Image
+              src="/icons/Teleport.svg"
+              alt="Quests"
+              width={20}
+              height={20}
+              className={styles.questIcon}
+            />
+            <span>Quests</span>
+          </Link>
+          <Link 
+            href="/library" 
+            className={`${styles.mobileNavButton} ${isActive('/library') ? styles.mobileNavButtonActive : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Image
+              src="/icons/bookicon.svg"
+              alt="Library"
+              width={20}
+              height={20}
+              className={styles.questIcon}
+            />
+            <span>Library</span>
+          </Link>
         </div>
       </div>
     </nav>

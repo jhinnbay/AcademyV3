@@ -1,9 +1,23 @@
 .sideNavigation {
-  width: 448.53px;
+  width: 100%;
+  max-width: 448px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 11.68px;
   border-radius: 18.69px;
+}
+
+@media (max-width: 1200px) {
+  .sideNavigation {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sideNavigation {
+    max-width: 100%;
+  }
 }
 
 .membershipImage {

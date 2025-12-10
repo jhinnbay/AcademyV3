@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   background-color: rgb(244, 245, 254); /* #F4F5FE - matching the design */
-  padding: 48px 112px;
+  padding: 48px clamp(24px, 5vw, 112px);
   margin-top: auto;
 }
 

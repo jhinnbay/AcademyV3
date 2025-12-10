@@ -19,7 +19,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
+  padding: 16px clamp(16px, 3vw, 40px);
   gap: 24px;
   min-height: 100px;
 }
@@ -28,8 +28,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 37.04px;
-  flex-shrink: 0;
+  gap: clamp(12px, 2vw, 37px);
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .logoWrapper {
@@ -49,7 +50,7 @@
 
 .academyName {
   font-family: var(--font-primary);
-  font-size: 32px;
+  font-size: clamp(20px, 2.5vw, 32px);
   font-weight: var(--font-weight-bold);
   color: #000000;
   margin: 0;
@@ -60,15 +61,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 24.69px;
-  flex-shrink: 0;
+  gap: clamp(12px, 1.5vw, 24px);
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .linksContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 24.69px;
+  gap: clamp(8px, 1.5vw, 24px);
+  flex-wrap: wrap;
 }
 
 .navButton {
@@ -145,6 +148,12 @@
   object-fit: contain;
 }
 
+.menuIcon {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
 .navButtonActive .questIcon {
   filter: brightness(0) invert(1);
 }
@@ -154,6 +163,12 @@
   height: 20px;
   color: rgba(17, 24, 39, 1);
   flex-shrink: 0;
+}
+
+.rightIcons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .leftIcons {
@@ -358,79 +373,242 @@
   height: 20px;
 }
 
+/* Mobile Menu */
+.mobileMenuButton {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--color-primary);
+  box-shadow: 0px 1px 10.4px 0px rgba(81, 104, 255, 0.40);
+}
+
+.mobileMenuButton:hover {
+  background: rgba(81, 104, 255, 0.9);
+}
+
+.mobileMenu {
+  display: none;
+  width: 100%;
+  background: #F4F5FE;
+  border-top: 2px solid #000000;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.mobileMenuOpen {
+  max-height: 500px;
+  padding: 16px 20px;
+}
+
+.mobileLinksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.mobileNavButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: rgba(163, 163, 163, 1);
+}
+
+.mobileNavButton:hover {
+  background: rgba(81, 104, 255, 0.1);
+  color: var(--color-primary);
+}
+
+.mobileNavButtonActive {
+  background: #5168FF;
+  color: #ECECEC;
+}
+
+.mobileNavButtonActive .homeIcon,
+.mobileNavButtonActive .questIcon {
+  filter: brightness(0) invert(1);
+}
+
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .topSection {
-    gap: 40px;
-    padding: 12.35px 20px;
+    gap: 16px;
+    padding: 16px 20px;
   }
 
   .academyName {
-    font-size: 36px;
+    font-size: clamp(18px, 2.5vw, 24px);
   }
 
-  .logoWrapper {
-    width: 120px;
-    height: 120px;
+  .searchContainer {
+    max-width: 400px;
+  }
+
+  .searchInput {
+    font-size: 14px;
+  }
+
+  .searchInput::placeholder {
+    font-size: 14px;
+  }
+
+  .linksContainer {
+    gap: 8px;
+  }
+
+  .navButton {
+    padding: 0 12px;
+    height: 44px;
+  }
+
+  .buttonLabel,
+  .buttonLabelActive {
+    font-size: 14px;
+  }
+
+  .shardsCounter {
+    padding: 6px 12px;
+  }
+
+  .shardsLabel,
+  .shardsValue {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    height: auto;
-    min-height: 362.16px;
+    min-height: auto;
   }
 
   .topSection {
-    flex-direction: column;
-    height: auto;
-    gap: 20px;
-    padding: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    min-height: auto;
   }
 
   .leftContent {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .rightContent {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
   }
 
   .academyName {
-    font-size: 28px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .logoWrapper {
-    width: 100px;
-    height: 100px;
+  .searchContainer {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
 
-  .navButton {
-    height: auto;
-    padding: 12px 24px;
+  .searchInputWrapper {
+    height: 44px;
+    padding: 10px 14px;
   }
 
-  .buttonLabel,
-  .buttonLabelActive {
+  .searchInput {
+    font-size: 14px;
+  }
+
+  .rightContent {
+    flex: 0 0 auto;
+    gap: 8px;
+  }
+
+  /* Hide desktop navigation links on mobile */
+  .linksContainer {
+    display: none;
+  }
+
+  /* Show mobile menu button */
+  .mobileMenuButton {
+    display: flex;
+  }
+
+  /* Show mobile menu */
+  .mobileMenu {
+    display: block;
+  }
+
+  .shardsCounter {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .shardsLabel {
+    display: none;
+  }
+
+  .shardsValue {
+    font-size: 14px;
+  }
+
+  .messageButton {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topSection {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .academyName {
     font-size: 18px;
   }
 
   .searchInputWrapper {
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 74.92px;
+    height: 40px;
+    padding: 8px 12px;
   }
 
   .searchInput {
-    font-size: 18px;
-    min-width: 200px;
+    font-size: 13px;
   }
 
-  .helperText {
-    font-size: 16px;
+  .rightIcons {
+    gap: 8px;
+  }
+
+  .shardsCounter {
+    padding: 6px 8px;
+  }
+
+  .mobileMenu {
+    padding: 12px 16px;
+  }
+
+  .mobileNavButton {
+    padding: 10px 14px;
+    font-size: 15px;
   }
 }
 
